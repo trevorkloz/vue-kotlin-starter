@@ -1,7 +1,3 @@
-# frontend
-
-> A Vue.js & Spring Boot example project
-
 ## Project setup
 ```
 npm install
