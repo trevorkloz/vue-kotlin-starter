@@ -6,7 +6,7 @@ import javax.persistence.*
 @Suppress("JpaDataSourceORMInspection")
 @Entity
 @Table(name = "orders")
-class Order(val orderNo: String?, val name: String?) {
+data class Order(val orderNo: String?, val name: String?) {
 
     constructor() : this(null, null) {
     }
