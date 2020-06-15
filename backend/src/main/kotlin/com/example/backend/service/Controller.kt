@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
+typealias Greeting = Map<String, String>
 
 @RestController()
 @RequestMapping("/api")
@@ -16,6 +17,11 @@ class Controller {
 
     @Autowired
     private lateinit var orderRepository: OrderRepository
+
+    @GetMapping(path = ["/greeting"])
+    fun greeting(): Greeting {
+        return mapOf("msg" to "Hello")
+    }
 
     @GetMapping(path = ["/order/{id}"])
     fun getOrderById(@PathVariable("id") id: Long): Order? {
