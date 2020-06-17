@@ -12,7 +12,8 @@ data class Order(val orderNo: String?, val name: String?) {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Long = 0
+    @SequenceGenerator(name="seq_PK", sequenceName="SEQ_PRIMARYKEY", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_PK")
+    var id: Long? = null
 
 }

@@ -36,9 +36,9 @@
     methods: {
 
       createNewOrder () {
-        api.createOrder(this.user.orderNo, this.user.name).then(response => {
+        api.createOrder(this.order.orderNo, this.order.name).then(response => {
             this.response = response.data;
-            this.user.id = response.data;
+            this.order.id = response.data;
             this.showResponse = true
           })
           .catch(e => {

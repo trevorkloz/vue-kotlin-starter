@@ -8,14 +8,14 @@ const AXIOS = axios.create({
 
 export default {
 
-    getOrder(orderId) {
-        return AXIOS.get(`/order/` + orderId);
+    getOrder(order) {
+        return AXIOS.get(`/order/` + order.id);
     },
     createOrder(orderNo, name) {
         return AXIOS.post(`/order/` + orderNo + '/' + name);
     },
-    deleteOrder(orderId) {
-        return AXIOS.delete(`/order/` + orderId);
+    deleteOrder(order) {
+        return AXIOS.delete(`/order/` + order.id);
     }
 }
 
